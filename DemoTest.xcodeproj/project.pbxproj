@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1823D204208DC67400B9FDDD /* cell_demo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823D203208DC67400B9FDDD /* cell_demo3.m */; };
+		1823D207208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823D206208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.m */; };
+		1823D20A208DF5EB00B9FDDD /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823D209208DF5EB00B9FDDD /* HomePageVC.m */; };
+		1823D20E208E008700B9FDDD /* cell_tbl_priceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823D20C208E008700B9FDDD /* cell_tbl_priceTableViewCell.m */; };
+		1823D20F208E008700B9FDDD /* cell_tbl_priceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823D20D208E008700B9FDDD /* cell_tbl_priceTableViewCell.xib */; };
+		1875913F208EF83500606E86 /* TTRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875913E208EF83400606E86 /* TTRangeSlider.m */; };
+		18759142208EF8E000606E86 /* price_cell_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18759141208EF8E000606E86 /* price_cell_2.m */; };
+		18A337CB208DBAC3000FF302 /* Demo3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A337CA208DBAC3000FF302 /* Demo3VC.m */; };
 		18A56AD12089A8F700CAE7E6 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56ACF2089A8F700CAE7E6 /* CollectionViewCell.m */; };
 		18A56AD22089A8F700CAE7E6 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A56AD02089A8F700CAE7E6 /* CollectionViewCell.xib */; };
 		18A56AD62089B04A00CAE7E6 /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56AD42089B04A00CAE7E6 /* CollectionHeaderView.m */; };
@@ -20,6 +28,12 @@
 		18A56AEC2089CF7100CAE7E6 /* cell_dimond.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56AEB2089CF7100CAE7E6 /* cell_dimond.m */; };
 		18A56AF02089D80F00CAE7E6 /* CollectionTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56AEE2089D80F00CAE7E6 /* CollectionTopView.m */; };
 		18A56AF12089D80F00CAE7E6 /* CollectionTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A56AEF2089D80F00CAE7E6 /* CollectionTopView.xib */; };
+		18A56AF4208A06B200CAE7E6 /* TableViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56AF3208A06B200CAE7E6 /* TableViewDemoVC.m */; };
+		18A56AF7208A06E300CAE7E6 /* cell_tableview.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A56AF6208A06E300CAE7E6 /* cell_tableview.m */; };
+		18C80D9D208F277000A671C7 /* demo3DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C80D9C208F277000A671C7 /* demo3DetailVC.m */; };
+		18C80DA0208F293A00A671C7 /* cell_demo3CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C80D9F208F293A00A671C7 /* cell_demo3CollectionViewCell.m */; };
+		18D28BD5208AFBAD00F4C1AF /* SearchTableDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D28BD4208AFBAD00F4C1AF /* SearchTableDetailsVC.m */; };
+		18D28BD8208AFCF500F4C1AF /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D28BD7208AFCF500F4C1AF /* SearchModel.m */; };
 		18D5B14C2088BBA800B85B78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5B14B2088BBA800B85B78 /* AppDelegate.m */; };
 		18D5B14F2088BBA800B85B78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5B14E2088BBA800B85B78 /* ViewController.m */; };
 		18D5B1522088BBA800B85B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D5B1502088BBA800B85B78 /* Main.storyboard */; };
@@ -49,6 +63,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1823D202208DC67400B9FDDD /* cell_demo3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell_demo3.h; sourceTree = "<group>"; };
+		1823D203208DC67400B9FDDD /* cell_demo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cell_demo3.m; sourceTree = "<group>"; };
+		1823D205208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell_demo3_collectionViewCollectionViewCell.h; sourceTree = "<group>"; };
+		1823D206208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cell_demo3_collectionViewCollectionViewCell.m; sourceTree = "<group>"; };
+		1823D208208DF5EB00B9FDDD /* HomePageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageVC.h; sourceTree = "<group>"; };
+		1823D209208DF5EB00B9FDDD /* HomePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageVC.m; sourceTree = "<group>"; };
+		1823D20B208E008700B9FDDD /* cell_tbl_priceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell_tbl_priceTableViewCell.h; sourceTree = "<group>"; };
+		1823D20C208E008700B9FDDD /* cell_tbl_priceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cell_tbl_priceTableViewCell.m; sourceTree = "<group>"; };
+		1823D20D208E008700B9FDDD /* cell_tbl_priceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell_tbl_priceTableViewCell.xib; sourceTree = "<group>"; };
+		1875913C208EF83400606E86 /* TTRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSlider.h; sourceTree = "<group>"; };
+		1875913D208EF83400606E86 /* TTRangeSliderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSliderDelegate.h; sourceTree = "<group>"; };
+		1875913E208EF83400606E86 /* TTRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRangeSlider.m; sourceTree = "<group>"; };
+		18759140208EF8E000606E86 /* price_cell_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = price_cell_2.h; sourceTree = "<group>"; };
+		18759141208EF8E000606E86 /* price_cell_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = price_cell_2.m; sourceTree = "<group>"; };
+		18A337C9208DBAC3000FF302 /* Demo3VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo3VC.h; sourceTree = "<group>"; };
+		18A337CA208DBAC3000FF302 /* Demo3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3VC.m; sourceTree = "<group>"; };
 		18A56ACE2089A8F700CAE7E6 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		18A56ACF2089A8F700CAE7E6 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		18A56AD02089A8F700CAE7E6 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -71,6 +101,18 @@
 		18A56AED2089D80F00CAE7E6 /* CollectionTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionTopView.h; sourceTree = "<group>"; };
 		18A56AEE2089D80F00CAE7E6 /* CollectionTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionTopView.m; sourceTree = "<group>"; };
 		18A56AEF2089D80F00CAE7E6 /* CollectionTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTopView.xib; sourceTree = "<group>"; };
+		18A56AF2208A06B200CAE7E6 /* TableViewDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDemoVC.h; sourceTree = "<group>"; };
+		18A56AF3208A06B200CAE7E6 /* TableViewDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDemoVC.m; sourceTree = "<group>"; };
+		18A56AF5208A06E300CAE7E6 /* cell_tableview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell_tableview.h; sourceTree = "<group>"; };
+		18A56AF6208A06E300CAE7E6 /* cell_tableview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cell_tableview.m; sourceTree = "<group>"; };
+		18C80D9B208F277000A671C7 /* demo3DetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = demo3DetailVC.h; sourceTree = "<group>"; };
+		18C80D9C208F277000A671C7 /* demo3DetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demo3DetailVC.m; sourceTree = "<group>"; };
+		18C80D9E208F293A00A671C7 /* cell_demo3CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell_demo3CollectionViewCell.h; sourceTree = "<group>"; };
+		18C80D9F208F293A00A671C7 /* cell_demo3CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cell_demo3CollectionViewCell.m; sourceTree = "<group>"; };
+		18D28BD3208AFBAD00F4C1AF /* SearchTableDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableDetailsVC.h; sourceTree = "<group>"; };
+		18D28BD4208AFBAD00F4C1AF /* SearchTableDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableDetailsVC.m; sourceTree = "<group>"; };
+		18D28BD6208AFCF500F4C1AF /* SearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		18D28BD7208AFCF500F4C1AF /* SearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
 		18D5B1472088BBA700B85B78 /* DemoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D5B14A2088BBA800B85B78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D5B14B2088BBA800B85B78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +157,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1875913B208EF81800606E86 /* RangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				1875913C208EF83400606E86 /* TTRangeSlider.h */,
+				1875913E208EF83400606E86 /* TTRangeSlider.m */,
+				1875913D208EF83400606E86 /* TTRangeSliderDelegate.h */,
+			);
+			path = RangeSlider;
+			sourceTree = "<group>";
+		};
+		18A337C8208DBA91000FF302 /* Demo 3 */ = {
+			isa = PBXGroup;
+			children = (
+				18A337C9208DBAC3000FF302 /* Demo3VC.h */,
+				18A337CA208DBAC3000FF302 /* Demo3VC.m */,
+				1823D202208DC67400B9FDDD /* cell_demo3.h */,
+				1823D203208DC67400B9FDDD /* cell_demo3.m */,
+				1823D205208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.h */,
+				1823D206208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.m */,
+			);
+			path = "Demo 3";
+			sourceTree = "<group>";
+		};
 		18A56ADD2089CBF900CAE7E6 /* TPKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +193,53 @@
 				18A56AE52089CBF900CAE7E6 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		18D28BCE208AFAE200F4C1AF /* Demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				18A56AF2208A06B200CAE7E6 /* TableViewDemoVC.h */,
+				18A56AF3208A06B200CAE7E6 /* TableViewDemoVC.m */,
+				18A56AF5208A06E300CAE7E6 /* cell_tableview.h */,
+				18A56AF6208A06E300CAE7E6 /* cell_tableview.m */,
+				18D28BD3208AFBAD00F4C1AF /* SearchTableDetailsVC.h */,
+				18D28BD4208AFBAD00F4C1AF /* SearchTableDetailsVC.m */,
+				18D28BD6208AFCF500F4C1AF /* SearchModel.h */,
+				18D28BD7208AFCF500F4C1AF /* SearchModel.m */,
+				18C80D9B208F277000A671C7 /* demo3DetailVC.h */,
+				18C80D9C208F277000A671C7 /* demo3DetailVC.m */,
+				18C80D9E208F293A00A671C7 /* cell_demo3CollectionViewCell.h */,
+				18C80D9F208F293A00A671C7 /* cell_demo3CollectionViewCell.m */,
+			);
+			path = Demo1;
+			sourceTree = "<group>";
+		};
+		18D28BCF208AFAEF00F4C1AF /* Demo2 */ = {
+			isa = PBXGroup;
+			children = (
+				18D5B14D2088BBA800B85B78 /* ViewController.h */,
+				18D5B14E2088BBA800B85B78 /* ViewController.m */,
+				18A56ACE2089A8F700CAE7E6 /* CollectionViewCell.h */,
+				18A56ACF2089A8F700CAE7E6 /* CollectionViewCell.m */,
+				18A56AD02089A8F700CAE7E6 /* CollectionViewCell.xib */,
+				18A56AD32089B04A00CAE7E6 /* CollectionHeaderView.h */,
+				18A56AD42089B04A00CAE7E6 /* CollectionHeaderView.m */,
+				18A56AD52089B04A00CAE7E6 /* CollectionHeaderView.xib */,
+				18A56AD82089B74300CAE7E6 /* cell_price.h */,
+				18A56AD92089B74300CAE7E6 /* cell_price.m */,
+				18A56ADA2089B74300CAE7E6 /* cell_price.xib */,
+				18A56AEA2089CF7100CAE7E6 /* cell_dimond.h */,
+				18A56AEB2089CF7100CAE7E6 /* cell_dimond.m */,
+				18A56AED2089D80F00CAE7E6 /* CollectionTopView.h */,
+				18A56AEE2089D80F00CAE7E6 /* CollectionTopView.m */,
+				18A56AEF2089D80F00CAE7E6 /* CollectionTopView.xib */,
+				1823D20B208E008700B9FDDD /* cell_tbl_priceTableViewCell.h */,
+				1823D20C208E008700B9FDDD /* cell_tbl_priceTableViewCell.m */,
+				1823D20D208E008700B9FDDD /* cell_tbl_priceTableViewCell.xib */,
+				18759140208EF8E000606E86 /* price_cell_2.h */,
+				18759141208EF8E000606E86 /* price_cell_2.m */,
+			);
+			path = Demo2;
 			sourceTree = "<group>";
 		};
 		18D5B13E2088BBA700B85B78 = {
@@ -153,31 +265,21 @@
 		18D5B1492088BBA800B85B78 /* DemoTest */ = {
 			isa = PBXGroup;
 			children = (
+				1875913B208EF81800606E86 /* RangeSlider */,
+				18A337C8208DBA91000FF302 /* Demo 3 */,
+				18D28BCF208AFAEF00F4C1AF /* Demo2 */,
+				18D28BCE208AFAE200F4C1AF /* Demo1 */,
 				18A56ADD2089CBF900CAE7E6 /* TPKeyboardAvoiding */,
 				18D5B14A2088BBA800B85B78 /* AppDelegate.h */,
 				18D5B14B2088BBA800B85B78 /* AppDelegate.m */,
-				18D5B14D2088BBA800B85B78 /* ViewController.h */,
-				18D5B14E2088BBA800B85B78 /* ViewController.m */,
 				18D5B1502088BBA800B85B78 /* Main.storyboard */,
 				18D5B1562088BBA800B85B78 /* Assets.xcassets */,
 				18D5B1582088BBA800B85B78 /* LaunchScreen.storyboard */,
 				18D5B15B2088BBA800B85B78 /* Info.plist */,
 				18D5B15C2088BBA800B85B78 /* main.m */,
 				18D5B1532088BBA800B85B78 /* DemoTest.xcdatamodeld */,
-				18A56ACE2089A8F700CAE7E6 /* CollectionViewCell.h */,
-				18A56ACF2089A8F700CAE7E6 /* CollectionViewCell.m */,
-				18A56AD02089A8F700CAE7E6 /* CollectionViewCell.xib */,
-				18A56AD32089B04A00CAE7E6 /* CollectionHeaderView.h */,
-				18A56AD42089B04A00CAE7E6 /* CollectionHeaderView.m */,
-				18A56AD52089B04A00CAE7E6 /* CollectionHeaderView.xib */,
-				18A56AD82089B74300CAE7E6 /* cell_price.h */,
-				18A56AD92089B74300CAE7E6 /* cell_price.m */,
-				18A56ADA2089B74300CAE7E6 /* cell_price.xib */,
-				18A56AEA2089CF7100CAE7E6 /* cell_dimond.h */,
-				18A56AEB2089CF7100CAE7E6 /* cell_dimond.m */,
-				18A56AED2089D80F00CAE7E6 /* CollectionTopView.h */,
-				18A56AEE2089D80F00CAE7E6 /* CollectionTopView.m */,
-				18A56AEF2089D80F00CAE7E6 /* CollectionTopView.xib */,
+				1823D208208DF5EB00B9FDDD /* HomePageVC.h */,
+				1823D209208DF5EB00B9FDDD /* HomePageVC.m */,
 			);
 			path = DemoTest;
 			sourceTree = "<group>";
@@ -312,6 +414,7 @@
 				18A56AD72089B04A00CAE7E6 /* CollectionHeaderView.xib in Resources */,
 				18A56AF12089D80F00CAE7E6 /* CollectionTopView.xib in Resources */,
 				18D5B1522088BBA800B85B78 /* Main.storyboard in Resources */,
+				1823D20F208E008700B9FDDD /* cell_tbl_priceTableViewCell.xib in Resources */,
 				18A56ADC2089B74300CAE7E6 /* cell_price.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,16 +443,29 @@
 				18A56AF02089D80F00CAE7E6 /* CollectionTopView.m in Sources */,
 				18A56ADB2089B74300CAE7E6 /* cell_price.m in Sources */,
 				18A56AE82089CBF900CAE7E6 /* TPKeyboardAvoidingTableView.m in Sources */,
+				18D28BD8208AFCF500F4C1AF /* SearchModel.m in Sources */,
+				1875913F208EF83500606E86 /* TTRangeSlider.m in Sources */,
 				18D5B1552088BBA800B85B78 /* DemoTest.xcdatamodeld in Sources */,
+				18A337CB208DBAC3000FF302 /* Demo3VC.m in Sources */,
+				18C80DA0208F293A00A671C7 /* cell_demo3CollectionViewCell.m in Sources */,
 				18A56AE62089CBF900CAE7E6 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				18A56AF4208A06B200CAE7E6 /* TableViewDemoVC.m in Sources */,
 				18A56AD62089B04A00CAE7E6 /* CollectionHeaderView.m in Sources */,
 				18A56AE92089CBF900CAE7E6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				18A56AEC2089CF7100CAE7E6 /* cell_dimond.m in Sources */,
+				1823D20A208DF5EB00B9FDDD /* HomePageVC.m in Sources */,
 				18A56AD12089A8F700CAE7E6 /* CollectionViewCell.m in Sources */,
 				18D5B14F2088BBA800B85B78 /* ViewController.m in Sources */,
+				18A56AF7208A06E300CAE7E6 /* cell_tableview.m in Sources */,
+				1823D204208DC67400B9FDDD /* cell_demo3.m in Sources */,
 				18A56AE72089CBF900CAE7E6 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				1823D207208DC9D000B9FDDD /* cell_demo3_collectionViewCollectionViewCell.m in Sources */,
+				1823D20E208E008700B9FDDD /* cell_tbl_priceTableViewCell.m in Sources */,
+				18759142208EF8E000606E86 /* price_cell_2.m in Sources */,
 				18D5B15D2088BBA800B85B78 /* main.m in Sources */,
+				18D28BD5208AFBAD00F4C1AF /* SearchTableDetailsVC.m in Sources */,
 				18D5B14C2088BBA800B85B78 /* AppDelegate.m in Sources */,
+				18C80D9D208F277000A671C7 /* demo3DetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    lblValues.layer.cornerRadius = 3;
-    lblValues.layer.borderColor = [UIColor blueColor].CGColor;
-    lblValues.layer.borderWidth = 1;
-    lblValues.clipsToBounds = true;
+   
 
 }
 

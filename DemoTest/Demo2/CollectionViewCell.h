@@ -11,5 +11,7 @@
 @interface CollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblValues;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UIView *view_Sep;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
 
 @end
