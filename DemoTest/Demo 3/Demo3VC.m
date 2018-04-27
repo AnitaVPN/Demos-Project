@@ -63,7 +63,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    self.title = @"Search Feature Demo - 2";
 }
 
 -(void)setUpData
@@ -159,6 +159,7 @@
     [arrKeys addObject:@"CLARITY"];
     [arrKeys addObject:@"FLOURESENCE"];
     [arrKeys addObject:@"LAB"];
+    [arrKeys addObject:@"OPTIONS"];
     [arrKeys addObject:@"CUT"];[arrKeys addObject:@"POLISH"];[arrKeys addObject:@"SYMMETRY"];
     
 //    [arrKeys addObject:@"RICE/CTS"];[arrKeys addObject:@"AMOUNT"];[arrKeys addObject:@"DISCOUNT"];[arrKeys addObject:@"NEW ARRIVAL DATE"];
@@ -180,6 +181,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    
+    if ([[arrKeys objectAtIndex:section] isEqualToString:@"OPTIONS"]) {
+        return 0;
+    }
+    
     return 1;//[arrKeys count];    //count number of row from counting array hear cataGorry is An Array
 }
 
@@ -198,6 +204,11 @@
     [cell.collectionView registerNib:[UINib nibWithNibName:@"cell_price" bundle:nil] forCellWithReuseIdentifier:@"cell_price"];
     cell.section = (int)indexPath.section;
     cell.arrKeys = arrKeys;
+    cell.textColor = _textColor;
+    cell.selectionColor = _selectionColor;
+    cell.textSelectedColor = _textSelectedColor;
+    cell.defaultBgColor = _defaultBgColor;
+    cell.defaultBorderColor = _defaultBorderColor;
     cell.collectionView.delegate = cell;
     cell.collectionView.dataSource = cell;
     cell.tag = indexPath.section;
@@ -225,7 +236,64 @@
     
     lbl.text = [arrKeys objectAtIndex:section];
     lbl.textColor = [UIColor whiteColor];
-    [view addSubview:lbl];
+    lbl.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0];
+    
+    if(section ==9  || section == 10 || section == 8 )
+    {
+        
+        [view setAlpha:0.85];
+        
+//       UIView * view1 = [[UIView alloc]initWithFrame:CGRectMake(10, 0, [UIScreen mainScreen].bounds.size.width - 20, 40)];
+//
+//        view1.backgroundColor = [UIColor darkGrayColor];
+//        [view1 addSubview:lbl];
+
+//        [view addSubview:view1];
+//
+//        return view;
+//
+    }
+    
+    
+   
+    
+    if([[arrKeys objectAtIndex:section] isEqualToString:@"OPTIONS"])
+    {
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"3EX",@"3VG+",@"NO BGM", nil];
+        UIView *viewLAB = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40)];
+        
+        for (int i = 0; i < arr.count; i++) {
+            UIButton *btn =[[UIButton alloc]initWithFrame:CGRectMake(i * ([UIScreen mainScreen].bounds.size.width / arr.count), 0, [UIScreen mainScreen].bounds.size.width / arr.count + 2, 40)];
+            [btn setTitle:[arr objectAtIndex:i] forState:UIControlStateNormal];
+            [btn setBackgroundColor:_themeColor];
+            [btn setAlpha:0.85];
+            btn.tag = 100 + section++;
+            [btn addTarget:self action:@selector(SelectedVALUEs:) forControlEvents:UIControlEventTouchUpInside];
+//            [btn setbac]
+            if(section == 8)
+            {
+                [btn setAlpha:1.0];
+
+            }
+            
+            [btn.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0]];
+            [viewLAB addSubview:btn];
+            viewLAB.backgroundColor = [UIColor lightGrayColor];
+        }
+        [view addSubview:viewLAB];
+
+    }
+    else
+    {
+        [view addSubview:lbl];
+    }
+    
+    
+    
+    
+    
+    
+    
     view.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:226.0/255.0 blue:226.0/255.0 alpha:1.0];;
     
     view.layer.cornerRadius = 0.0f;
@@ -233,14 +301,14 @@
     view.layer.borderColor = [UIColor clearColor].CGColor;
     view.layer.masksToBounds = YES;
     
-    view.layer.shadowColor = [UIColor grayColor].CGColor;
+    view.layer.shadowColor = _themeColor.CGColor;
     view.layer.shadowOffset = CGSizeMake(0, 2.0f);
     view.layer.shadowRadius = 2.0f;
     view.layer.shadowOpacity = 0.5f;
     view.layer.masksToBounds = NO;
     view.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds cornerRadius:view.layer.cornerRadius].CGPath;
     
-    view.backgroundColor = [UIColor darkGrayColor];
+    view.backgroundColor = _themeColor;
     return view;
     
     
@@ -253,6 +321,46 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)SelectedVALUEs:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    [btn setBackgroundColor:_themeColor];
+    [btn setAlpha:1.0];
+    
+    if(btn.tag == 107)
+    {
+        UIButton *btn = [self.view viewWithTag:100 + 8];
+        [btn setBackgroundColor:_themeColor];
+        [btn setAlpha:0.65];
+        
+        UIButton *btn1 = [self.view viewWithTag:100 + 9];
+        [btn1 setBackgroundColor:_themeColor];
+        [btn1 setAlpha:0.65];
+    }
+    if(btn.tag == 108)
+    {
+        UIButton *btn = [self.view viewWithTag:100 + 9];
+        [btn setBackgroundColor:_themeColor];
+        [btn setAlpha:0.65];
+        
+        UIButton *btn1 = [self.view viewWithTag:100 +7];
+        [btn1 setBackgroundColor:_themeColor];
+        [btn1 setAlpha:0.65];
+    }
+    if(btn.tag == 109)
+    {
+        UIButton *btn = [self.view viewWithTag:100 + 7];
+        [btn setBackgroundColor:_themeColor];
+        [btn setAlpha:0.65];
+        
+        UIButton *btn1 = [self.view viewWithTag:100 + 8];
+        [btn1 setBackgroundColor:_themeColor];
+        [btn1 setAlpha:0.65];
+    }
+    
+    
+    
+}
 
 
 @end

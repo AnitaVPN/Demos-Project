@@ -111,6 +111,10 @@
         cell.clipsToBounds = true;
         cell.layer.borderWidth = 2;
     }
+     else if([_model.strKeyName isEqualToString:@"Shape"])
+     {
+          cell.layer.borderWidth = 0;
+     }
     else
     {
         cell.layer.borderColor = [UIColor lightGrayColor].CGColor;

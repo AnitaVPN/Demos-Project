@@ -13,6 +13,13 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionDiamond;
 @property (weak, nonatomic) IBOutlet UIView *viewHeader;
+@property(strong,nonatomic) UIColor *themeColor;
+@property(strong,nonatomic) UIColor *textColor;
+@property(strong,nonatomic) UIColor *selectionColor;
+@property(strong,nonatomic) UIColor *textSelectedColor;
+@property(strong,nonatomic) UIColor *defaultBgColor;
+@property(strong,nonatomic) UIColor *defaultBorderColor;
+
 
 @end
 

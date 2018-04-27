@@ -14,6 +14,15 @@
 @property int section;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) NSMutableArray *arrKeys;
+@property (weak, nonatomic) UIColor *textColor;
+
+@property (weak, nonatomic) UIColor *selectionColor;
+@property(strong,nonatomic) UIColor *textSelectedColor;
+
+
+@property(strong,nonatomic) UIColor *defaultBgColor;
+@property(strong,nonatomic) UIColor *defaultBorderColor;
+
 @property (weak, nonatomic) NSMutableDictionary *dictSectionValues;
 -(id)initWithName:(NSMutableDictionary *)dict :(cell_demo3 *)cell;
 

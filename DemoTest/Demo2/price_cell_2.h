@@ -28,5 +28,5 @@
 @property (weak, nonatomic) IBOutlet UIStepper *stepper_from;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper_to;
 -(void)setupSlider;
-
+@property(strong,nonatomic)UIColor *themeColor;
 @end

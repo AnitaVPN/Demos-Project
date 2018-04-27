@@ -112,20 +112,27 @@
 {
     
     
-    
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    
-      NSMutableArray *arr = [dictSectionValues objectForKey:[self.arrKeys objectAtIndex:_section]];
+    NSMutableArray *arr = [dictSectionValues objectForKey:[self.arrKeys objectAtIndex:_section]];
     
     if([arr count] > 0)
     {
          cell.lblValues.text = [arr objectAtIndex:indexPath.row];
     }
-   cell.view_Sep.hidden = true;
+  
+    cell.view_Sep.hidden = true;
     cell.lblValues.hidden = false;
     cell.img.hidden = true;
     cell.lblName.hidden = true;
+    
+    cell.lblName.textColor = _textColor;
+    cell.lblValues.textColor = _textColor;
+//    cell.backgroundColor = _defaultBgColor;
+
+    
+    cell.backgroundColor =
+    _defaultBgColor;
     if(_section == 0)
     {
         cell.img.hidden = false;
@@ -133,7 +140,9 @@
         cell.img.image = [UIImage imageNamed:[arr objectAtIndex:indexPath.row]];
         cell.lblValues.hidden = true;
         cell.lblName.hidden = false;
-        cell.backgroundColor = [UIColor whiteColor];
+       // cell.backgroundColor = _defaultBgColor;
+        
+    
     }
     
     if (arr == nil || arr.count == 0) {
@@ -145,6 +154,8 @@
         ccell.txtTo.inputAccessoryView = [self addToolBar:indexPath];
         ccell.txtFrom.inputAccessoryView = [self addToolBar:indexPath];
         
+        ccell.backgroundColor = _defaultBgColor;
+        
         return ccell;
     }
    
@@ -154,16 +165,38 @@
         NSMutableArray *arrContains = [dictSelection objectForKey:[self.arrKeys objectAtIndex:_section]];
         if([arrContains containsObject:[arr objectAtIndex:indexPath.row]])
         {
-            if(_section == 0) cell.view_Sep.hidden = false;
-            cell.backgroundColor = [UIColor grayColor];
-            cell.lblValues.textColor = [UIColor whiteColor];
+            if(_section == 0)
+            {
+                cell.view_Sep.hidden = false;
+                cell.backgroundColor =
+                _defaultBgColor;
+                
+            }
+            else
+            {
+                cell.backgroundColor =
+                _selectionColor;
+                cell.lblValues.textColor = _textSelectedColor;
+                cell.layer.borderColor = _defaultBgColor.CGColor;
+                cell.layer.borderWidth = 1;
+            }
+            
+            
         }
         else
         {
-            if(_section == 0) cell.view_Sep.hidden = true;
-
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.lblValues.textColor = [UIColor blackColor];
+            if(_section == 0)
+            {
+                cell.view_Sep.hidden = true;
+                cell.backgroundColor = _defaultBgColor;
+            }
+            else
+            {
+                cell.backgroundColor = _defaultBgColor;
+                cell.lblValues.textColor = _textColor;
+                cell.layer.borderColor = _defaultBgColor.CGColor;
+            }
+            
 
         }
     }
@@ -259,6 +292,7 @@
     if(_section == 0)
     {
         cell.view_Sep.hidden = false;
+        cell.backgroundColor = _defaultBgColor;
     }
     
     NSMutableArray *arr = [dictSectionValues valueForKey:[_arrKeys objectAtIndex:_section]];
@@ -273,14 +307,19 @@
         if(![arrContains containsObject:[arr objectAtIndex:indexPath.row]])
         {
             [arrContains addObject:[arr objectAtIndex:indexPath.row] ];
-            cell.backgroundColor = [UIColor grayColor];
-            cell.lblValues.textColor = [UIColor whiteColor];
+            
+            if(_section != 0)
+            {
+                cell.backgroundColor = _selectionColor;
+                cell.lblValues.textColor = _textSelectedColor;
+            }
+          
         }
         else
         {
             [arrContains removeObject:[arr objectAtIndex:indexPath.row]];
             cell.backgroundColor = [UIColor clearColor];
-            cell.lblValues.textColor = [UIColor blackColor];
+            cell.lblValues.textColor = _textColor;
         }
 
         [dictSelection setValue:arrContains forKey:[_arrKeys objectAtIndex:_section]];
@@ -291,8 +330,8 @@
         [NewArr addObject:[arr objectAtIndex:indexPath.row]];
 
         [dictSelection setValue:NewArr forKey:[_arrKeys objectAtIndex:_section]];
-        cell.backgroundColor = [UIColor grayColor];
-        cell.lblValues.textColor = [UIColor whiteColor];
+        cell.backgroundColor = _selectionColor;;
+        cell.lblValues.textColor = _textSelectedColor;
     }
 
     [_collectionView reloadItemsAtIndexPaths:@[indexPath]];

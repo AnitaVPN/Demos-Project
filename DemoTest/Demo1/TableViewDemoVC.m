@@ -44,6 +44,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [_tblSearch reloadData];
+    self.title = @"Search Feature Demo - 3";
 
 }
 
@@ -98,20 +99,42 @@
     [dictSectionValues setValue:arrColor forKey:@"Color"];
     [dictSectionValues setValue:arrClarity forKey:@"Clarity"];
     [dictSectionValues setValue:[[NSMutableArray alloc]initWithObjects:@"India",@"Pakistan",@"USA",@"UAE", nil] forKey:@"Country"];
-    [dictSectionValues setValue:cut forKey:@"Gradding Lab"];
-    [dictSectionValues setValue:[[NSMutableArray alloc]initWithObjects:@"Good",@"Medium",@"Very Good",@"Excellent", nil] forKey:@"Make"];
-    [dictSectionValues setValue:FlourSense forKey:@"Flourance Intencity"];
+    [dictSectionValues setValue:cut forKey:@"Cut"];
+    [dictSectionValues setValue:[[NSMutableArray alloc]initWithObjects:@"30s",@"40s",@"50s-60s",@"60s-70s", nil] forKey:@"Size Group"];
+    [dictSectionValues setValue:FlourSense forKey:@"Flouresence"];
     [dictSectionValues setValue:arrShades forKey:@"Color Shade"];
         [dictSectionValues setValue:Polish forKey:@"Polish"];
         [dictSectionValues setValue:Symmetry forKey:@"Symmetry"];
+    
+    
+    NSMutableArray *lab = [[NSMutableArray alloc]initWithObjects:@"GIA",@"IGI",@"HRD",@"NONE", nil];
+    [dictSectionValues setValue:Symmetry forKey:@"Lab"];
+
+    
+    NSMutableArray *arrKeys1 = [[NSMutableArray alloc]init];
+    [arrKeys1 addObject:@"SHAPE"];
+    [arrKeys1 addObject:@"COUNTRY"];
+    [arrKeys1 addObject:@"SIZE GROUP"];
+    [arrKeys1 addObject:@"COLOR"];
+    [arrKeys1 addObject:@"CLARITY"];
+    [arrKeys1 addObject:@"FLOURESENCE"];
+    [arrKeys1 addObject:@"LAB"];
+    [arrKeys1 addObject:@"CUT"];
+    [arrKeys1 addObject:@"POLISH"];
+    [arrKeys1 addObject:@"SYMMETRY"];
+    
+    
+    
         
         
-        for (int i = 0; i <  dictSectionValues.count ; i++)
+        for (int i = 0; i <  arrKeys1.count ; i++)
         {
+            NSString *key = [arrKeys1 objectAtIndex:i];
+            
             SearchModel *model = [[SearchModel alloc]init];
-            model.strKeyName = dictSectionValues.allKeys[i];
+            model.strKeyName = [key localizedCapitalizedString];
             NSMutableArray *arr = [[NSMutableArray alloc]init];
-            arr = [dictSectionValues valueForKey:dictSectionValues.allKeys[i]];
+            arr = [dictSectionValues valueForKey:[key localizedCapitalizedString]];
             NSMutableDictionary *dict ;
             dict = [[NSMutableDictionary alloc]init];
 

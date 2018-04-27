@@ -66,11 +66,11 @@
     
     
     
-    arrDimondShape = [[NSMutableArray alloc]initWithObjects:@"Round",@"Princess",@"Oval",@"Marquise",@"Pear",@"Cushion",@"Radient" ,nil];
+    arrDimondShape = [[NSMutableArray alloc]initWithObjects:@"Round",@"Princess",@"Oval",@"Marquise",@"Pear",@"Cushion",@"Radient",@"Emerald",@"Asscher",nil];
     
     
     
-    [dictSectionValues setValue:arrDimondShape forKey:@"DIAMONDS"];
+    [dictSectionValues setValue:arrDimondShape forKey:@"SHAPES"];
     
     
     
@@ -146,7 +146,7 @@
     
     //    _collectionView.collec
     
-    self.title = @"Narola Groups Search Feature Demo - 1";
+    self.title = @"Search Feature Demo - 1";
     
 }
 
@@ -185,9 +185,21 @@
     for (char a = 'D'; a <= 'Z'; a++)
         
     {
-        
+        if(a == 'O')
+        {
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"O-P"]];
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"Q-R"]];
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"S-T"]];
+            
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"U-V"]];
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"W-X"]];
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"Y-Z"]];
+            [arrColor addObject:[NSString stringWithFormat:@"%@", @"FANCY"]];
+            
+            
+            break;
+        }
         [arrColor addObject:[NSString stringWithFormat:@"%c", a]];
-        
     }
     
     
@@ -270,11 +282,17 @@
     
     
     
-    [arrKeys addObject:@"DIAMONDS"];
+    [arrKeys addObject:@"SHAPES"];
     
     [arrKeys addObject:@"COLOR"];
     
-    [arrKeys addObject:@"CLARITY"];[arrKeys addObject:@"COLOR SHADE"];[arrKeys addObject:@"CUT"];[arrKeys addObject:@"POLISH"];[arrKeys addObject:@"SYMMETRY"];[arrKeys addObject:@"CARAT"];[arrKeys addObject:@"RICE/CTS"];[arrKeys addObject:@"AMOUNT"];[arrKeys addObject:@"DISCOUNT"];[arrKeys addObject:@"NEW ARRIVAL DATE"];
+    [arrKeys addObject:@"CLARITY"];
+//    [arrKeys addObject:@"COLOR SHADE"];
+    [arrKeys addObject:@"CUT"];[arrKeys addObject:@"POLISH"];[arrKeys addObject:@"SYMMETRY"];
+    [arrKeys addObject:@"CARAT"];
+    [arrKeys addObject:@"CARAT-OPTION1"];
+    [arrKeys addObject:@"CARAT-OPTION2"];    [arrKeys addObject:@"CARAT-OPTION3"];
+    [arrKeys addObject:@"CARAT-OPTION4"];
     
     
     
@@ -428,23 +446,17 @@
     
     if (arr == nil || arr.count == 0) {
         
-        
-        
         if(indexPath.section == 8)
-            
         {
-            
             price_cell_2 *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:@"price_cell_2" forIndexPath:indexPath];
-            
             ccell.txt2_to.tag = 0;
-            
             ccell.slider_to.tag = indexPath.row;
             
             ccell.slider_to.accessibilityHint = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
             
-            ccell.slider_to.tintColor = [UIColor darkGrayColor];
+            ccell.slider_to.tintColor = _themeColor;
             
-            ccell.slider_from.tintColor = [UIColor darkGrayColor];
+            ccell.slider_from.tintColor = _themeColor;
             
             
             
@@ -471,9 +483,9 @@
         {
             
             price_cell_2 *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:@"price_cell_3" forIndexPath:indexPath];
-            
+            ccell.themeColor = _themeColor;
+            ccell.rangeSliderCurrency.tintColor = _themeColor;
             [ccell setupSlider];
-            
             ccell.rangeSliderCurrency.delegate = self;
             
             return ccell;
@@ -502,7 +514,8 @@
             
             
             
-            
+            ccell.stepper_to.tintColor = _themeColor;
+            ccell.stepper_from.tintColor = _themeColor;
             
             return ccell;
             
@@ -530,192 +543,122 @@
         
     }
     
-    
-    
     CollectionViewCell *ccell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    
-    
-    
-    
     ccell.lblValues.text = [arr objectAtIndex:indexPath.row];
-    
     ccell.lblValues.hidden = false;
-    
     ccell.img.hidden = true;
-    
     ccell.lblName.hidden = true;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    ccell.view_Sep.hidden = true;
+    ccell.view_Sep.backgroundColor = _defaultBgColor;
     
     if(indexPath.section == 0)
-        
     {
-        
         ccell.img.hidden = false;
-        
         ccell.img.image = [UIImage imageNamed:[arr objectAtIndex:indexPath.row]];
-        
         ccell.lblValues.hidden = true;
-        
         ccell.lblName.text = [arr objectAtIndex:indexPath.row];
-        
         ccell.lblName.hidden = false;
-        
+        ccell.lblName.textColor = _textColor;
+    }
+
+    ccell.contentView.backgroundColor = _defaultBgColor;
+    if(indexPath.section  != 0)
+    {
+        ccell.contentView.layer.borderColor = _defaultBorderColor.CGColor;
+        ccell.contentView.layer.borderWidth = 1;
     }
     
-    
-    
-    ccell.backgroundColor = [UIColor clearColor];
-    
-    //    ccell.lblValues.layer.cornerRadius = 3;
-    
-    ccell.lblValues.layer.borderColor = [UIColor blackColor].CGColor;
-    
-    ccell.lblValues.layer.borderWidth = 1;
-    
-    // ccell.lblValues.clipsToBounds = true;
-    
-    
-    
-    
-    
-    
-    
     if([dictSelection.allKeys containsObject:[dictSectionValues.allKeys objectAtIndex:indexPath.section]])
-        
     {
         
         NSMutableArray *arrContains = [dictSelection objectForKey:dictSectionValues.allKeys[indexPath.section]];
-        
         if([arrContains containsObject:[arr objectAtIndex:indexPath.row]])
-            
         {
-            
-            ccell.backgroundColor = [UIColor blackColor];
-            
-            ccell.lblValues.textColor = [UIColor whiteColor];
-            
+            ccell.view_Sep.hidden = true;
+            if (indexPath.section != 0)
+            {
+                ccell.contentView.backgroundColor = _selectionColor;
+                ccell.lblValues.textColor = _textSelectedColor;
+                ccell.contentView.layer.borderWidth = 1;
+            }
+            else
+            {
+                ccell.view_Sep.hidden = false;
+                ccell.lblName.textColor = _selectionColor;
+                ccell.view_Sep.backgroundColor = _selectionColor;
+            }
         }
-        
         else
-            
         {
             
-            ccell.backgroundColor = [UIColor clearColor];
-            
-            ccell.lblValues.textColor = [UIColor blackColor];
-            
+            if(indexPath.section != 0)
+            {
+                ccell.contentView.backgroundColor = _defaultBgColor;
+                ccell.lblValues.textColor = _textColor;
+            }
+            else
+            {
+                ccell.view_Sep.hidden = true;
+                ccell.lblName.textColor = _textColor;
+                ccell.contentView.layer.borderWidth = 0; //ana
+            }
         }
-        
     }
     
-    
-    
     if(indexPath.section == 1)
-        
     {
-        
-        ccell.lblValues.layer.cornerRadius = 25;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 20;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
     }
     
     if(indexPath.section == 2)
         
     {
-        
-        ccell.lblValues.layer.cornerRadius = 16;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 16;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
     }
     
     if(indexPath.section == 3  )
-        
     {
-        
-        ccell.lblValues.layer.cornerRadius = 8;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 8;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
     }
     
     if(indexPath.section == 4)
-        
     {
-        
-        ccell.lblValues.layer.cornerRadius = 2;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 2;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
     }
     
     if(indexPath.section == 5)
-        
     {
-        
-        ccell.lblValues.layer.cornerRadius = 2;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 2;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
     }
-    
     if( indexPath.section == 6 )
-        
     {
-        
-        ccell.lblValues.layer.cornerRadius = 20;
-        
-        ccell.lblValues.clipsToBounds = true;
-        
-        ccell.lblValues.layer.masksToBounds = true;
-        
+        ccell.contentView.layer.cornerRadius = 20;
+        ccell.contentView.clipsToBounds = true;
+        ccell.contentView.layer.masksToBounds = true;
         return ccell;
-        
-        
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if(indexPath.section == 0)
+    {
+        ccell.contentView.layer.borderWidth = 0;
+    }
+  
     return ccell;
     
 }
@@ -752,7 +695,7 @@
         
         
         
-        headerView.backgroundColor = [UIColor darkGrayColor];
+        headerView.backgroundColor = _themeColor;
         
         
         
@@ -797,11 +740,7 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 
 {
-    
-    
-    
     if(collectionView == _collectionView)
-        
     {
         
         NSMutableArray *arr = [dictSectionValues valueForKey:[arrKeys objectAtIndex:indexPath.section]];
@@ -842,7 +781,7 @@
             
         {
             
-            return CGSizeMake(80, 120);
+            return CGSizeMake(([UIScreen mainScreen].bounds.size.width - 60)/3, 120);
             
         }
         
@@ -850,7 +789,7 @@
             
         {
             
-            return CGSizeMake(50, 50);
+            return CGSizeMake(40, 40);
             
         }
         
@@ -858,7 +797,7 @@
             
         {
             
-            return CGSizeMake(60, 40);
+            return CGSizeMake(50, 40);
             
         }
         
@@ -868,7 +807,7 @@
             
         {
             
-            return CGSizeMake(60, 60);
+            return CGSizeMake(50, 50);
             
         }
         
@@ -882,13 +821,13 @@
             
         }
         
-        return CGSizeMake(60, 40);
+        return CGSizeMake(50, 40);
         
     }
     
     
     
-    return CGSizeMake(80, 80);
+    return CGSizeMake(60, 60);
     
     
     
@@ -902,19 +841,7 @@
     
     CollectionViewCell *cell = (CollectionViewCell *)[_collectionView cellForItemAtIndexPath:indexPath];
     
-    
-    
-    
-    
-    
-    
-    
-    
     NSMutableArray *arr = [dictSectionValues valueForKey:[arrKeys objectAtIndex:indexPath.section]];
-    
-    
-    
-    
     
     if([dictSelection.allKeys containsObject:[dictSectionValues.allKeys objectAtIndex:indexPath.section]])
         
@@ -928,11 +855,27 @@
             
             [arrContains addObject:[arr objectAtIndex:indexPath.row] ];
             
-            cell.backgroundColor = [UIColor blackColor];
+            if(indexPath.section != 0)
+            {
+                cell.contentView.backgroundColor = _selectionColor;
+                
+                cell.lblValues.textColor = _textSelectedColor;
+            }
+            else
+            {
+                cell.view_Sep.hidden = false;;
+                cell.view_Sep.backgroundColor = _selectionColor;
+
+            }
             
-            cell.lblValues.textColor = [UIColor whiteColor];
             
-            cell.lblValues.clipsToBounds = true;
+           
+            
+            
+            
+//            cell.contentView.layer.cornerRadius = cell.contentView.layer.cornerRadius;
+//
+//            cell.contentView.clipsToBounds = true;
             
         }
         
@@ -942,9 +885,14 @@
             
             [arrContains removeObject:[arr objectAtIndex:indexPath.row]];
             
-            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = _defaultBgColor;
             
-            cell.lblValues.textColor = [UIColor blackColor];
+            if(indexPath.section == 0)
+            {
+                cell.view_Sep.hidden = true;
+            }
+            
+            cell.lblValues.textColor = _textColor;
             
         }
         
@@ -970,9 +918,20 @@
         
         [dictSelection setValue:NewArr forKey:dictSectionValues.allKeys[indexPath.section]];
         
-        cell.backgroundColor = [UIColor blackColor];
+       
         
-        cell.lblValues.textColor = [UIColor whiteColor];
+        cell.lblValues.textColor = _textSelectedColor;
+        
+        if(indexPath.section == 0)
+        {
+            cell.view_Sep.hidden = false;
+        }
+        else
+        {
+             cell.contentView.backgroundColor = _selectionColor;
+        }
+        
+       
         
     }
     
